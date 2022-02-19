@@ -1,42 +1,42 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
 
   <div class="container">
-    <a class="navbar-brand" href="#">Dating App</a>
+    <a class="navbar-brand" [routerLink]="['/home']">Dating App</a>
 
-    <ul *ngIf="loggedIn()"  class="navbar-nav me-auto mb-2 mb-lg-0 mr-lg-2">
-      <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="#">Matches</a>
+    <ul *ngIf="loggedIn()" class="navbar-nav me-auto mb-2 mb-lg-0 mr-lg-2">
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" aria-current="page" [routerLink]="['/members']">Matches</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Lists</a>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['/lists']">Lists</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Messages</a>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['/messages']">Messages</a>
       </li>
-      
-      
+
+
     </ul>
 
     <div class="dropdown" dropdown *ngIf="loggedIn()">
       <a class="dropdown-toggle text-light" dropdownToggle>
         Welcome {{authService.decodedToken?.unique_name}}
       </a>
-    
+
       <ul class="dropdown-menu mt-3" *dropdownMenu>
         <li><a class="dropdown-item" href="#"> <i class="fa fa-user"></i> Edit Profile</a></li>
         <div class="dropdown-divider"></div>
         <li><a class="dropdown-item" (click)="logout()"><i class="fa fa-sign-out"></i> Logout</a></li>
       </ul>
     </div>
-    
 
-    <form *ngIf="!loggedIn()"  #loginForm="ngForm" class="d-flex" (ngSubmit)="login()">
-      <input class="form-control me-2" type="text" placeholder="Username"
-       name="username" required [(ngModel)]="model.username"/>
 
-      <input class="form-control me-2" type="password" placeholder="Password"
-       name="password" required [(ngModel)]="model.password"/>
-      
+    <form *ngIf="!loggedIn()" #loginForm="ngForm" class="d-flex" (ngSubmit)="login()">
+      <input class="form-control me-2" type="text" placeholder="Username" name="username" required
+        [(ngModel)]="model.username" />
+
+      <input class="form-control me-2" type="password" placeholder="Password" name="password" required
+        [(ngModel)]="model.password" />
+
       <button [disabled]="!loginForm.valid" class="btn btn-success" type="submit">Login</button>
     </form>
   </div>
