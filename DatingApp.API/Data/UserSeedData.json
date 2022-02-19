@@ -14,9 +14,9 @@
     "Country": "Papua New Guinea",
     "Photos": [
       {
-        "url": "https://randomuser.me/api/portraits/women/83.jpg",
-        "isMain": true,
-        "description": "Culpa adipisicing deserunt cillum culpa aute ea qui ipsum consectetur laborum laborum."
+        "Url": "https://randomuser.me/api/portraits/women/83.jpg",
+        "IsMain": true,
+        "Description": "Culpa adipisicing deserunt cillum culpa aute ea qui ipsum consectetur laborum laborum."
       }
     ]
   },
@@ -35,9 +35,9 @@
     "Country": "Japan",
     "Photos": [
       {
-        "url": "https://randomuser.me/api/portraits/women/70.jpg",
-        "isMain": true,
-        "description": "Exercitation nisi aliqua voluptate duis excepteur enim labore consequat Lorem qui laborum in amet."
+        "Url": "https://randomuser.me/api/portraits/women/70.jpg",
+        "IsMain": true,
+        "Description": "Exercitation nisi aliqua voluptate duis excepteur enim labore consequat Lorem qui laborum in amet."
       }
     ]
   },
@@ -56,9 +56,9 @@
     "Country": "Suriname",
     "Photos": [
       {
-        "url": "https://randomuser.me/api/portraits/women/1.jpg",
-        "isMain": true,
-        "description": "Labore adipisicing incididunt labore non exercitation mollit anim aute aute."
+        "Url": "https://randomuser.me/api/portraits/women/1.jpg",
+        "IsMain": true,
+        "Description": "Labore adipisicing incididunt labore non exercitation mollit anim aute aute."
       }
     ]
   },
@@ -77,9 +77,9 @@
     "Country": "Lithuania",
     "Photos": [
       {
-        "url": "https://randomuser.me/api/portraits/women/45.jpg",
-        "isMain": true,
-        "description": "Nulla est anim in ullamco irure deserunt incididunt excepteur."
+        "Url": "https://randomuser.me/api/portraits/women/45.jpg",
+        "IsMain": true,
+        "Description": "Nulla est anim in ullamco irure deserunt incididunt excepteur."
       }
     ]
   },
@@ -98,9 +98,9 @@
     "Country": "Myanmar",
     "Photos": [
       {
-        "url": "https://randomuser.me/api/portraits/women/93.jpg",
-        "isMain": true,
-        "description": "Sit velit cupidatat nulla laboris veniam."
+        "Url": "https://randomuser.me/api/portraits/women/93.jpg",
+        "IsMain": true,
+        "Description": "Sit velit cupidatat nulla laboris veniam."
       }
     ]
   },
@@ -119,9 +119,9 @@
       "Country": "Greece",
       "Photos": [
         {
-          "url": "https://randomuser.me/api/portraits/men/60.jpg",
-          "isMain": true,
-          "description": "Excepteur cupidatat aliquip et laboris ipsum."
+          "Url": "https://randomuser.me/api/portraits/men/60.jpg",
+          "IsMain": true,
+          "Description": "Excepteur cupidatat aliquip et laboris ipsum."
         }
       ]
     },
@@ -140,9 +140,9 @@
       "Country": "Mozambique",
       "Photos": [
         {
-          "url": "https://randomuser.me/api/portraits/men/36.jpg",
-          "isMain": true,
-          "description": "Do duis sunt eiusmod et in ut sint duis aliquip nostrud reprehenderit voluptate reprehenderit ea."
+          "Url": "https://randomuser.me/api/portraits/men/36.jpg",
+          "IsMain": true,
+          "Description": "Do duis sunt eiusmod et in ut sint duis aliquip nostrud reprehenderit voluptate reprehenderit ea."
         }
       ]
     },
@@ -161,9 +161,9 @@
       "Country": "Bulgaria",
       "Photos": [
         {
-          "url": "https://randomuser.me/api/portraits/men/34.jpg",
-          "isMain": true,
-          "description": "Minim velit officia cupidatat duis sit officia amet duis mollit labore do officia velit exercitation."
+          "Url": "https://randomuser.me/api/portraits/men/34.jpg",
+          "IsMain": true,
+          "Description": "Minim velit officia cupidatat duis sit officia amet duis mollit labore do officia velit exercitation."
         }
       ]
     },
@@ -182,9 +182,9 @@
       "Country": "Lithuania",
       "Photos": [
         {
-          "url": "https://randomuser.me/api/portraits/men/39.jpg",
-          "isMain": true,
-          "description": "Enim tempor labore elit mollit."
+          "Url": "https://randomuser.me/api/portraits/men/39.jpg",
+          "IsMain": true,
+          "Description": "Enim tempor labore elit mollit."
         }
       ]
     },
@@ -203,9 +203,9 @@
       "Country": "Djibouti",
       "Photos": [
         {
-          "url": "https://randomuser.me/api/portraits/men/31.jpg",
-          "isMain": true,
-          "description": "Deserunt elit pariatur exercitation elit ea ex culpa laborum pariatur deserunt pariatur exercitation sit."
+          "Url": "https://randomuser.me/api/portraits/men/31.jpg",
+          "IsMain": true,
+          "Description": "Deserunt elit pariatur exercitation elit ea ex culpa laborum pariatur deserunt pariatur exercitation sit."
         }
       ]
     }
