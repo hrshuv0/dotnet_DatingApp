@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { BsDropdownModule } from 'ngx-bootstrap';
+import { BsDropdownModule, TabsModule } from 'ngx-bootstrap';
 import { RouterModule } from '@angular/router';
 import { JwtModule } from '@auth0/angular-jwt';
+import { NgxGalleryModule } from '@kolkov/ngx-gallery';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { appRoutes } from './routes';
 import { AppComponent } from './app.component';
@@ -17,11 +19,24 @@ import { ListsComponent } from './lists/lists.component';
 import { MessagesComponent } from './messages/messages.component';
 import { MemberCardComponent } from './members/member-card/member-card.component';
 import { ErrorInterceptorProvider } from './_services/error.interceptor';
-
+import { MemberDetailComponent } from './members/member-detail/member-detail.component';
+import { AlertifyService } from './_services/alertify.service';
+import { AuthGuard } from './_guards/auth.guard';
+import { UserService } from './_services/user.service';
+import { MemberDetailResolver } from './_resolvers/member-detail.resolver';
+import { MemberListResolver } from './_resolvers/member-list.resolver copy';
 
 export function tokenGetter(){
   return localStorage.getItem('token');
 }
+
+export class CustomHammerConfig extends HammerGestureConfig{
+  override overrides!: {
+    pinch: { enable: false; };
+    rorate: { enable: false; };
+  };
+}
+
 
 @NgModule({
   declarations: [
@@ -32,14 +47,22 @@ export function tokenGetter(){
     MemberListComponent,
     ListsComponent,
     MessagesComponent,
-    MemberCardComponent
+    MemberCardComponent,
+    MemberDetailComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
     BsDropdownModule.forRoot(),
+    TabsModule.forRoot(),
     RouterModule.forRoot(appRoutes),
+    NgxGalleryModule,
+    BrowserAnimationsModule,
+
+
+
+
     JwtModule.forRoot({
       config:{
         tokenGetter:tokenGetter,
@@ -50,7 +73,20 @@ export function tokenGetter(){
   ],
   providers: [
     AuthService,
-    ErrorInterceptorProvider
+    ErrorInterceptorProvider,
+    AlertifyService,
+    AuthGuard,
+    UserService,
+    MemberDetailResolver,
+    MemberListResolver
+
+    // {provide:HAMMER_GESTURE_CONFIG, useClass:CustomHammerConfig}
+
+
+
+  ],
+  exports:[
+    // RouterModule
   ],
   bootstrap: [AppComponent],
 })
