@@ -1,4 +1,4 @@
-<div class="container mt-5">
+<div *ngIf="!loggedIn()" class="container mt-5">
   <div *ngIf="!registerMode" style="text-align:center">
     <h1>Find your match</h1>
     <p class="lead">Come on in to view your match... All you need to do sign up!</p>
