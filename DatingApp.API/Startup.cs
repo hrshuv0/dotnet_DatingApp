@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DatingApp.API.Data;
 using DatingApp.API.Data.Services;
+using DatingApp.API.Helpers;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics;
@@ -45,7 +46,10 @@ namespace DatingApp.API
             services.AddDbContext<DataContext>(options => 
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddMvc().AddNewtonsoftJson(options =>
+            services.AddMvc(opt =>
+                {
+                    // opt.SuppressAsyncSuffixInActionNames = false;
+                }).AddNewtonsoftJson(options =>
             {
                 options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
             });
@@ -53,6 +57,8 @@ namespace DatingApp.API
             
 
             services.AddCors();
+            services.Configure<CloudinarySettings>(Configuration.GetSection("CloudinarySettings"));
+            
             services.AddAutoMapper(typeof(DatingRepository).Assembly);
             
             services.AddScoped<IAuthRepository, AuthRepository>();
@@ -107,7 +113,11 @@ namespace DatingApp.API
             app.UseAuthentication();
             app.UseAuthorization();
 
-            app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
+                // endpoints.MapDefaultControllerRoute();
+            });
         }
     }
 }
