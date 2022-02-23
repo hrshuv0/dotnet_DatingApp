@@ -21,8 +21,8 @@
       <span class="me-1">
         <img src="{{photoUrl}}" alt="">
       </span>
-      <a class="dropdown-toggle text-light" dropdownToggle>
-        Welcome {{authService.decodedToken?.unique_name | titlecase}}
+      <a class="dropdown-toggle text-dark" dropdownToggle>
+        Welcome <strong>{{authService.decodedToken?.unique_name | titlecase}}</strong>
       </a>
 
       <ul class="dropdown-menu mt-3" *dropdownMenu>
