@@ -71,12 +71,12 @@
 
             </div>
 
-            </form>
+            </form> 
             
           </tab>
 
           <tab heading="Edit Photo">
-            <app-photo-editor [photos]="user.photos!"></app-photo-editor>
+            <app-photo-editor [photos]="user.photos!" (getMemberPhotoChange)="updateMainPhoto($event)"></app-photo-editor>
           </tab>
 
           
