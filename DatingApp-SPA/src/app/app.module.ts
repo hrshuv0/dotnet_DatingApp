@@ -30,6 +30,9 @@ import { MemberEditResolver } from './_resolvers/member-edit.resolver copy';
 import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes.guard';
 import { PhotoEditorComponent } from './members/photo-editor/photo-editor.component';
 import { FileUploadModule } from 'ng2-file-upload';
+import { TimeagoClock, TimeagoFormatter, TimeagoIntl, TimeagoModule } from 'ngx-timeago';
+import { CommonModule } from '@angular/common';
+
 
 export function tokenGetter(){
   return localStorage.getItem('token');
@@ -41,6 +44,8 @@ export class CustomHammerConfig extends HammerGestureConfig{
     rorate: { enable: false; };
   };
 }
+
+
 
 
 @NgModule({
@@ -55,7 +60,8 @@ export class CustomHammerConfig extends HammerGestureConfig{
     MemberCardComponent,
     MemberDetailComponent,
     MemberEditComponent,
-    PhotoEditorComponent
+    PhotoEditorComponent,
+    
     
     
   ],
@@ -72,6 +78,7 @@ export class CustomHammerConfig extends HammerGestureConfig{
     NgxGalleryModule,
     BrowserAnimationsModule,
     FileUploadModule,
+    TimeagoModule.forRoot(),
 
 
     JwtModule.forRoot({
@@ -99,7 +106,9 @@ export class CustomHammerConfig extends HammerGestureConfig{
 
   ],
   exports:[
-    // RouterModule
+    // RouterModule,
+    CommonModule,
+    TimeagoModule
   ],
   bootstrap: [AppComponent],
 })
