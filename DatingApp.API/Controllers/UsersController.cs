@@ -6,6 +6,7 @@ using AutoMapper;
 using DatingApp.API.Data.Services;
 using DatingApp.API.Dtos.User;
 using DatingApp.API.Helpers;
+using DatingApp.API.Helpers.PSF;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -27,12 +28,14 @@ namespace DatingApp.API.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetUsers()
+        public async Task<IActionResult> GetUsers([FromQuery] UserParams userParams)
         {
-            var users = await _repository.GetUsers();
+            var users = await _repository.GetUsers(userParams);
             
             var usersToReturn = _mapper.Map<IEnumerable<UserForListDto>>(users);
 
+            Response.AddPagination(users.CurrentPage, users.PageSize, users.TotalCount, users.TotalPages);
+            
             return Ok(usersToReturn);
         }
 
