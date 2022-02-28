@@ -51,6 +51,12 @@
     <button class="btn btn-primary  col-auto mt-3" type="submit" style="margin-left: 12px;">Apply Filter</button>
     <button class="btn btn-info col-auto  mt-3" (click)="resetFilters()" type="button" style="margin-left: 10px;">Reset Filter</button>
 
+    <div class="col">
+      <div class="btn-group float-end mt-3">
+        <button type="button" name="orderBy" (click)="loadUsers()" [(ngModel)]="userParams.orderBy" btnRadio="lastActive" class="btn btn-primary">Last Active</button>
+        <button type="button" name="orderBy" (click)="loadUsers()" [(ngModel)]="userParams.orderBy" btnRadio="created" class="btn btn-primary">Newest Members</button>
+      </div>
+    </div>
 
   </form>
 

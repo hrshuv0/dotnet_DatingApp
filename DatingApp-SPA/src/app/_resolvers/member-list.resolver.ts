@@ -11,7 +11,7 @@ import { UserService } from "../_services/user.service";
 export class MemberListResolver implements Resolve<PaginatedResult<User[]>>{
 
     pageNumber = 1;
-    pageSize = 5;
+    pageSize = 10;
 
 
     constructor(private userService: UserService, 
