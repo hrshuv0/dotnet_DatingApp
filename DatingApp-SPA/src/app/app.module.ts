@@ -32,6 +32,7 @@ import { PhotoEditorComponent } from './members/photo-editor/photo-editor.compon
 import { FileUploadModule } from 'ng2-file-upload';
 import { TimeagoClock, TimeagoFormatter, TimeagoIntl, TimeagoModule } from 'ngx-timeago';
 import { CommonModule } from '@angular/common';
+import { ListsResolver } from './_resolvers/lists.resolver';
 
 
 export function tokenGetter(){
@@ -100,7 +101,8 @@ export class CustomHammerConfig extends HammerGestureConfig{
     UserService,
     MemberDetailResolver,
     MemberListResolver,
-    MemberEditResolver
+    MemberEditResolver,
+    ListsResolver
 
     // {provide:HAMMER_GESTURE_CONFIG, useClass:CustomHammerConfig}
 
