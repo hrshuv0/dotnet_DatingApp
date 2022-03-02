@@ -33,9 +33,7 @@ export class MemberListComponent implements OnInit {
       this.users = data['users'].result;
       this.pagination = data['users'].pagination;
 
-      this.pagination.itmsPerPage = Math.ceil(
-        this.pagination.totalItems / this.pagination.totalPages
-      );
+      // this.pagination.itmsPerPage = Math.ceil( this.pagination.totalItems / this.pagination.totalPages );
       // console.log(this.pagination.itmsPerPage);
     });
     this.userParams.gender = this.user.gender === 'female'?'male':'female';
@@ -58,15 +56,15 @@ export class MemberListComponent implements OnInit {
 
   loadUsers() {
     this.userService
-      .getUsers(this.pagination.currentPage, this.pagination.itmsPerPage, this.userParams)
+      .getUsers(this.pagination.currentPage, this.pagination.itmsPerPage = 10, this.userParams)
       .subscribe(
         (res: PaginatedResult<User[]>) => {
           this.users = res.result;
           this.pagination = res.pagination;
 
-          this.pagination.itmsPerPage = Math.ceil(
-            this.pagination.totalItems / this.pagination.totalPages
-          );
+          // this.pagination.itmsPerPage = Math.ceil(
+          //   this.pagination.totalItems / this.pagination.totalPages
+          // );
         },
         (error) => {
           this.alertify.error(error);
