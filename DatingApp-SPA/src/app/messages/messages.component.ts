@@ -13,17 +13,17 @@ import { UserService } from '../_services/user.service';
 })
 export class MessagesComponent implements OnInit {
 
-  messages!:Message[];
-  pagination!:Pagination;
-  messageContainer= 'Unread';
+  messages!: Message[];
+  pagination!: Pagination;
+  messageContainer = 'Unread';
 
-  constructor(private userService: UserService, private authService:AuthService,
-    private route:ActivatedRoute, private alertify:AlertifyService) { }
+  constructor(private userService: UserService, private authService: AuthService,
+    private route: ActivatedRoute, private alertify: AlertifyService) { }
 
   ngOnInit() {
     this.route.data.subscribe(data => {
       this.messages = data['messages'].result;
-      this.pagination= data['messages'].pagination;
+      this.pagination = data['messages'].pagination;
     });
 
 
@@ -31,14 +31,26 @@ export class MessagesComponent implements OnInit {
     // console.log(this.pagination.itmsPerPage = 5);
     // console.log(this.pagination.totalItems);
     // console.log(this.pagination.totalPages);
-    
+
+  }
+
+  deleteMessage(id: number) {
+    this.alertify.confirm('Are you sure you want to delete this message?', () => {
+      this.userService.deleteMessage(id, this.authService.decodedToken.nameid)
+        .subscribe(() => {
+          this.messages.splice(this.messages.findIndex(m => m.id == id), 1);
+          this.alertify.success("Message has been deleted");
+        }, error => {
+          this.alertify.error("Failed to delete the message");
+        });
+    });
   }
 
 
-  loadMessages(){
+  loadMessages() {
     this.userService.getMessages(this.authService.decodedToken.nameid,
       this.pagination.currentPage, this.pagination.itmsPerPage = 5, this.messageContainer).subscribe(
-        (res:PaginatedResult<Message[]>) => {
+        (res: PaginatedResult<Message[]>) => {
           this.messages = res.result;
           this.pagination = res.pagination;
         }, error => {
@@ -47,7 +59,7 @@ export class MessagesComponent implements OnInit {
       );
   }
 
-  pageChanged(event:any):void{
+  pageChanged(event: any): void {
     this.pagination.currentPage = event.page;
     this.loadMessages();
   }
