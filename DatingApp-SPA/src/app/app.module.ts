@@ -90,8 +90,10 @@ export class CustomHammerConfig extends HammerGestureConfig{
     JwtModule.forRoot({
       config:{
         tokenGetter:tokenGetter,
-        allowedDomains: ['localhost:5000'],
-        disallowedRoutes:['localhost:5000/api/auth']
+        // allowedDomains: ['localhost:5000'],
+        allowedDomains:['shuvo-datingapp.azurewebsites.net'],
+        // disallowedRoutes:['localhost:5000/api/auth'],
+        disallowedRoutes:['shuvo-datingapp.azurewebsites.net/api/auth']
       }
     })
   ],

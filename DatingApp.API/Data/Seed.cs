@@ -29,6 +29,23 @@ namespace DatingApp.API.Data
 
                 context.SaveChanges();
             }
+
+            if (!context.Values.Any())
+            {
+                var value1 = new Value
+                {
+                    Name = "test value"
+                };
+                var value2 = new Value
+                {
+                    Name = "another test value"
+                };
+
+                context.Values.Add(value1);
+                context.Values.Add(value2);
+
+                context.SaveChanges();
+            }
         }
         
         private static void CreatePasswordHash(string password, out byte[] passwordHash, out byte[] passwordSalt)
@@ -41,3 +58,5 @@ namespace DatingApp.API.Data
         }
     }
 }
+
+// Server=tcp:hrshuvo-dating-app.database.windows.net,1433;Initial Catalog=datingapp-db;Persist Security Info=False;User ID=datingapp-admin;Password=shuvo1234#;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;

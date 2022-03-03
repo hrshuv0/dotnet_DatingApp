@@ -1,5 +1,5 @@
 
-# DatingApp --- [Live](https://hrshuvo-etickets.azurewebsites.net)
+# DatingApp --- [Live](https://hrshuvo-datingapp.azurewebsites.net/)
 
 <hr>
 
@@ -18,7 +18,7 @@ This Project has been deployed in Azure, **[check live](#)**
 
 
 ## General Info
-This project is a WEB API app where user can **purchase movie tickets**.
+This project is a WEB API dating and **social app**. Where user can match by like each other and message.
 
 
 ## Technologies
@@ -44,7 +44,7 @@ This project is a WEB API app where user can **purchase movie tickets**.
 ## Run this app
 * Clone the project in your localhost
 * Migrate - Update Database
-* [ Note ] : you need to change connection string to connect with your localhost/(anywhere you want), other wise this will work for [live](https://hrshuvo-etickets.azurewebsites.net/) project.
+* [ Note ] : you need to change connection string to connect with your localhost/(anywhere you want), other wise this will work for [live](https://hrshuvo-datingapp.azurewebsites.net/) project.
 * Register and login to use all features
 
 <hr>
